@@ -36,7 +36,7 @@ export default function RootLayout({
         {/* Add a div with class "menu-icon" for the hamburger menu */}
         
         <nav className="bg-gray-900 flex">
-          <ul className="flex items-center space-x-4">
+          <ul className="flex items-center space-x-4 ul">
             <li>
               <Image
                 src={'./tailwind.svg'}
@@ -61,11 +61,25 @@ export default function RootLayout({
                 <div className="line"></div>
                 <div className="line"></div>
                 <div className="line"></div>
+                {/* Dropdown menu */}
+                  
             </li>
+          </ul>
+          <ul className="dropdown-menu items-center">
+            {navigation.map((item) => (
+              <li
+                key={item.name}
+                className={`m-2  links ${pathname == item.href ? 'text-gray-50 underline': ''}`} // Apply 'text-gray-50 underline' class to the active item
+              >
+                <Link href={item.href} className="text-gray-50">
+                  {item.name}
+                </Link>
+              </li>))}
           </ul>
           
         </nav>
         {children}
+      <script src="/script/script.js"></script>
 
       </body>
     </html>
