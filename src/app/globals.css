@@ -2,26 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    background-color: #F3F4F6;
+}
+
+nav {
+    position: relative;
+    width: 100%;
+}
+
+ul > li:first-child {
+    margin-left: 20px;
+}
+
+ul > li {
+    float: left;
+    margin: 20px;
+    transition: 0.5s;
+    font-size: 25px;
+}
+
+ul > .menu-li {
+    position: absolute;
+    left: calc(100% - 90px);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.3s ease;
+}
+
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+ul > .menu-li .line:nth-child(1) {
+    transform: rotate(0) translate(0, 0);
+}
+
+ul > .menu-li .line:nth-child(2) {
+    opacity: 1;
+}
+
+ul > .menu-li .line:nth-child(3) {
+    transform: rotate(0) translate(0, 0);
+}
+
+ul > .menu-li:hover .line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+ul > .menu-li:hover .line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.box {
+    margin: 96px;
+}
+
+.slide {
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    ul > .links {
+        display: none;
+    }
+
+    .box {
+        margin: 16px;
+    }
 }
