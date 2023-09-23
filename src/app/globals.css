@@ -26,6 +26,10 @@ ul > li {
     float: left;
     margin: 20px;
     transition: 0.5s;
+}
+
+ul > li:hover {
+    margin: 20px;
     font-size: 25px;
 }
 
@@ -39,6 +43,17 @@ ul > .menu-li {
     background-color: white;
     margin: 3px 0;
     transition: all 0.3s ease-in-out;
+}
+
+ul > .menu-li {
+    position: absolute;
+    left: calc(100% - 90px);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.3s ease;
+    z-index: 200;
 }
 
 ul > .menu-li .line:nth-child(1) {
@@ -63,6 +78,18 @@ ul > .menu-li:hover .line:nth-child(3) {
 
 .dropdown-menu{
     display: none;
+    visibility: hidden;
+}
+
+.image-container{
+    position: absolute;
+    left: calc(100% - 750px);
+}
+
+.image-container > .img{
+    width: 600px;
+    height: 600px;
+    
 }
 
 .box {
@@ -75,12 +102,22 @@ ul > .menu-li:hover .line:nth-child(3) {
     padding: 10px;
 }
 
+.box > .text > .btn{
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    left: auto;
+    justify-content: center;
+}
+
+.img-container {
+    justify-content: space-around;
+}
+
 @media only screen and (max-width: 600px) {
     nav > .ul > .links {
         display: none;
     }
-
-    
 
     .dropdown-menu {
         position: fixed;
@@ -97,6 +134,7 @@ ul > .menu-li:hover .line:nth-child(3) {
         justify-content: center;
         margin: auto;
         display: none;
+        visibility: visible;
       }
 
       ul > .menu-li {
@@ -110,7 +148,17 @@ ul > .menu-li:hover .line:nth-child(3) {
         z-index: 200;
     }
 
+    ul>li{
+        font-size: 25px;
+    }
+
     .box {
         margin: 16px;
+    }
+
+    .image-container{
+        top: 180px;
+        left: auto;
+        display: block;
     }
 }
