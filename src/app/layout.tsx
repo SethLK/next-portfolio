@@ -17,8 +17,8 @@ const navigation: { name: string; href: string }[] = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
-  { name: 'Blog', href: '/blog' },
   { name: 'Projects', href: '/projects' },
+  { name: 'Blog', href: '/blog' },
 ];
 
 export default function RootLayout({

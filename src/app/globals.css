@@ -110,8 +110,18 @@ ul > .menu-li:hover .line:nth-child(3) {
     justify-content: center;
 }
 
-.img-container {
-    justify-content: space-around;
+
+.me{
+    text-align: center;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+
+.skills > progress{
+    height: 20px;
+    background-color: black;
 }
 
 @media only screen and (max-width: 600px) {
@@ -132,10 +142,11 @@ ul > .menu-li:hover .line:nth-child(3) {
         /* display: flex; */
         flex-direction: column;
         justify-content: center;
-        margin: auto;
+        margin: 0 auto;
         display: none;
         visibility: visible;
       }
+
 
       ul > .menu-li {
         position: absolute;
@@ -159,6 +170,6 @@ ul > .menu-li:hover .line:nth-child(3) {
     .image-container{
         top: 180px;
         left: auto;
-        display: block;
+        display: none;
     }
 }
