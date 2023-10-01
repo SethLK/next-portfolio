@@ -124,6 +124,14 @@ ul > .menu-li:hover .line:nth-child(3) {
     background-color: black;
 }
 
+@media only screen and (max-width: 900px) {
+    .image-container{
+        top: 180px;
+        left: auto;
+        display: none;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     nav > .ul > .links {
         display: none;

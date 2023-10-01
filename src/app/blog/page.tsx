@@ -35,7 +35,7 @@ export default function Blog() {
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <ul className='flex'>
+          <ul className=''>
             {data.map((content) => (
               <li><a href={`/blog/${content._id}`}>{content.title}</a></li>
             ))}
