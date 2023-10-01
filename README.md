@@ -16,6 +16,9 @@ I've worked on a variety of projects, ranging from personal experiments to profe
 
 As a developer, I enjoy sharing my knowledge and insights with the community. Check out my blog section for articles on web development, programming tips, and tech-related musings. Feel free to leave comments and engage in discussions!
 
+##Note:
+Blog will not able to work well
+
 ### Contact
 
 Have a project in mind, a question, or just want to say hello? Don't hesitate to reach out! You can find my contact information in the "Contact" section. Let's connect and collaborate on exciting projects.
