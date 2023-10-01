@@ -1,3 +1,5 @@
+// After: About component with linting issues resolved
+
 import React from "react";
 import Image from "next/image";
 
@@ -22,8 +24,8 @@ const About = () => {
       <div className="text m-5">
         <h1 className="text-3xl underline">About Me</h1>
         <p className="mt-4">
-          I'm a self-taught programmer from Myanmar with a profound passion
-          for crafting outstanding web and mobile experiences. I'm driven by
+          I&apos;m a self-taught programmer from Myanmar with a profound passion
+          for crafting outstanding web and mobile experiences. I&apos;m driven by
           curiosity to explore scalable distribution systems, enjoy the
           challenge of problem-solving, and prioritize writing clean and
           maintainable code. I believe in the importance of responsive design,
@@ -32,7 +34,7 @@ const About = () => {
         <div className="slide-container m-4">
           <div className="slide flex flex-wrap">
             {images.map((img, index) => (
-              <img
+              <Image
                 key={index}
                 src={img}
                 alt={`Slide ${index + 1}`}

@@ -1,31 +1,39 @@
+
+// components/Blog.tsx
 "use client"
 import { useEffect, useState } from 'react';
 
-export async function getData() {
-  const res = await fetch('http://localhost:9090/data/post');
-  return res.json();
+interface BlogPost {
+  _id: number;
+  title: string;
+  content: string;
 }
 
-interface BlogPosts {
-  _id: Number,
-  title: String,
-  content: String
+async function fetchBlogPosts(): Promise<BlogPost[]> {
+  const response = await fetch('http://localhost:9090/data/post');
+  if (!response.ok) {
+    throw new Error('Failed to fetch blog posts');
+  }
+  return response.json();
 }
 
 export default function Blog() {
-  const [data, setData] = useState<BlogPosts[]>([]);
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getData()
-      .then((result) => {
-        setData(result);
+    async function fetchData() {
+      try {
+        const data = await fetchBlogPosts();
+        setBlogPosts(data);
         setLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error('Error fetching data:', error);
         setLoading(false);
-      });
+      }
+    }
+
+    fetchData();
   }, []);
 
   return (
@@ -35,9 +43,11 @@ export default function Blog() {
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <ul className=''>
-            {data.map((content) => (
-              <li><a href={`/blog/${content._id}`}>{content.title}</a></li>
+          <ul>
+            {blogPosts.map((content) => (
+              <li key={content._id}>
+                <a href={`/blog/${content._id}`}>{content.title}</a>
+              </li>
             ))}
           </ul>
         )}
