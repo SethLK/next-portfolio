@@ -29,15 +29,15 @@ export default function GitHubProjects(){
             <div id="about-me" className="box flex">
                 <div className="text m-5">
                     <h1 className="text-5xl"><a href="https://github.com/SethLK?tab=repositories" target='_blank'>Projects</a></h1>
-                        <ul>
+                        <div className='grid md:grid-cols-4'>
                             {repos.map((repo) => (
-                            <li key={repo.id}>
+                            <li key={repo.id} className='m-4'>
                                 <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
                                 {repo.name}
                                 </a>
                             </li>
                             ))}
-                        </ul>
+                        </div>
                 </div>
             </div>
         )
