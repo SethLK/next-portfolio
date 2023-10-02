@@ -71,7 +71,7 @@ export default function RootLayout({
           </ul>
         </nav>
         {children}
-        <script src="/script/script.js" async></script> {/* Change to async */}
+        <script src="/script/script.js"></script>
       </body>
     </html>
   );
