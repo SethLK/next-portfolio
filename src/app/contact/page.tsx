@@ -1,16 +1,15 @@
-// After: Contact component with linting issues resolved
-
-import Link from "next/link"
-import Image from "next/image"
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div id="contact" className="box flex me">
+    <div id="contact" className="box me flex"> 
       <div className="text m-5">
-        <h1 className="text-5xl mb-4">Contact Me</h1>
-        <Link href="mailto:sethlk2006@gmail.com?subject=Hello&body=Hello" className="btn text-2xl bg-slate-900">Just Say &quot;Hello&quot;📧</Link>
-        <div className="img-container mt-4 flex justify-center">
-          
+        <h1 className="text-5xl">Contact Me</h1>
+        <Link href="mailto:sethlk2006@gmail.com?subject=Hello&body=Hello" className="btn text-2xl bg-slate-900">
+          Just Say &quot;Hello&quot;📧
+        </Link>
+        <div className="img-container flex justify-center mt-7"> {/* Add margin-top and margin-bottom */}
           <Link href={'https://github.com/SethLK'} target={'_blank'} className="links">
             <Image
               className="github-img"
@@ -31,9 +30,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      {/* <img
-      src={'/programming.svg'}
-      /> */}
     </div>
-  )
+  );
 }
