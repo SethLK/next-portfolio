@@ -51,7 +51,7 @@ export default function Blog() {
           <ul>
             {blogPosts.map((content) => (
               <li key={content._id}>
-                <a href={`/blog/${content._id}`}>{content.title}</a>
+                <a href={`/blog/${content._id}`} target="_blank">{content.title}</a>
               </li>
             ))}
           </ul>

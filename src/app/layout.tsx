@@ -33,7 +33,7 @@ export default function RootLayout({
           <ul className="flex items-center space-x-4 ul">
             <li>
               <Image
-                src={'./tailwind.svg'}
+                src={'/tailwind.svg'}
                 alt="tailwind logo"
                 width={75}
                 height={75}
