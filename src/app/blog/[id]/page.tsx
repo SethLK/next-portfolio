@@ -10,6 +10,8 @@ interface Post {
 }
 
 export default function BlogPage() {
+  const url: string = process.env.NEXT_PUBLIC_URL || ''; // Access the URL variable correctly
+
   const path = usePathname();
   const _id = path.replace('/blog/', '');
 
@@ -17,7 +19,7 @@ export default function BlogPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:9090/data/post/${_id}`)
+    fetch(`${url}${_id}`)
       .then((res) => res.json())
       .then((result) => {
         setPost(result);
@@ -27,7 +29,7 @@ export default function BlogPage() {
         console.error("Error fetching post", error);
         setLoading(false);
       });
-  }, [_id]);
+  }, [_id, url]); // Include 'url' in the dependency array
 
   return (
     <div id="blog" className="box flex">

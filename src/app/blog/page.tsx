@@ -9,8 +9,13 @@ interface BlogPost {
   content: string;
 }
 
+
 async function fetchBlogPosts(): Promise<BlogPost[]> {
-  const response = await fetch('http://localhost:9090/data/post');
+  const url:string = process.env.NEXT_PUBLIC_URL || ''; // Access the URL variable correctly
+
+  console.log("Url is " + url);
+
+  const response = await fetch(url);
   if (!response.ok) {
     throw new Error('Failed to fetch blog posts');
   }
