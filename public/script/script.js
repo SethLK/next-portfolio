@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const dropdownMenu = document.querySelector(".dropdown-menu");
 
   // Function to hide the dropdown menu
-  function hideDropdownMenu() {
-    dropdownMenu.style.display = "none";
-  }
+  // function hideDropdownMenu() {
+  //   dropdownMenu.style.display = "none";
+  // }
 
   // Function to toggle the dropdown menu
   function toggleDropdownMenu() {
