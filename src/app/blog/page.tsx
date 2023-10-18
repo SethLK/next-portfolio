@@ -1,7 +1,8 @@
+"use client"
 
 // components/Blog.tsx
-"use client"
 import { useEffect, useState } from 'react';
+import './blog.css'
 
 interface BlogPost {
   _id: number;
@@ -9,17 +10,18 @@ interface BlogPost {
   content: string;
 }
 
-
 async function fetchBlogPosts(): Promise<BlogPost[]> {
-  const url:string = process.env.NEXT_PUBLIC_URL || ''; // Access the URL variable correctly
+  const url: string = process.env.NEXT_PUBLIC_URL || '';
 
-  console.log("Url is " + url);
-
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error('Failed to fetch blog posts');
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Failed to fetch blog posts');
+    }
+    return response.json();
+  } catch (error) {
+    throw new Error('Error fetching data: ' + error);
   }
-  return response.json();
 }
 
 export default function Blog() {
@@ -31,9 +33,9 @@ export default function Blog() {
       try {
         const data = await fetchBlogPosts();
         setBlogPosts(data);
-        setLoading(false);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error(error);
+      } finally {
         setLoading(false);
       }
     }
@@ -42,16 +44,17 @@ export default function Blog() {
   }, []);
 
   return (
-    <div id="blog" className="box flex">
+    <div id="blog" className="box">
       <div className="blog-list">
         <h1 className="text-5xl">Blog</h1>
         {loading ? (
-          <p className='mt-5'>Loading...</p>
+          <p className="mt-5">Loading...</p>
         ) : (
           <ul>
             {blogPosts.map((content) => (
-              <li key={content._id}>
+              <li key={content._id} className='ul_2'>
                 <a href={`/blog/${content._id}`} target="_blank">{content.title}</a>
+                <br />
               </li>
             ))}
           </ul>

@@ -1,0 +1,29 @@
+/* Your existing CSS code */
+
+ul > li {
+    float: none; /* Remove the float */
+    clear: both; /* Clear the float */
+    margin: 20px;
+    transition: 0.5s;
+}
+
+/* Add a margin-top to separate list items */
+ul > li + li {
+    margin-top: 20px;
+}
+
+/* Remove flex properties from .menu-li */
+ul > .menu-li {
+    position: absolute;
+    left: calc(100% - 90px);
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 200;
+}
+
+/* Add margin to separate lines inside .menu-li */
+ul > .menu-li .line {
+    margin-bottom: 5px;
+}
+
+/* Rest of your CSS */
