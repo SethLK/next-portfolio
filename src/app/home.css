@@ -1,0 +1,28 @@
+.home{
+    margin: 96px;
+}
+
+.image-container{
+    position: absolute;
+    left: calc(100% - 700px);
+}
+
+.image-container > .img{
+    width: 600px;
+    height: 600px;   
+}
+
+@media only screen and (max-width: 1344px) { 
+    .home{
+        margin: 16px;
+    }
+
+    .image-container{
+        position: static;
+    }
+
+    .image-container > .img{
+        width: 600px;
+        height: 600px;   
+    }
+}

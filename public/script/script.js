@@ -1,24 +1,23 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const menuLi = document.querySelector(".menu-li");
-  const dropdownMenu = document.querySelector(".dropdown-menu");
+const menuBtn = document.getElementById('menu_btn');
+const dropdownMenu = document.getElementById('d-links');
 
-  // Function to hide the dropdown menu
-  function hideDropdownMenu() {
-    dropdownMenu.style.display = "none";
-  }
+const body = document.querySelector('body')
 
-  // Function to toggle the dropdown menu
-  function toggleDropdownMenu() {
-    if (dropdownMenu.style.display === "none") {
-      dropdownMenu.style.display = "flex";
+menuBtn.addEventListener('click', (e) => {
+  if (window.innerWidth < 601) {
+    if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+      dropdownMenu.style.display = 'flex';
     } else {
-      dropdownMenu.style.display = "none";
+      dropdownMenu.style.display = 'none';
     }
+  } else {
+    dropdownMenu.style.display = 'none';
   }
-
-  menuLi.addEventListener("click", function() {
-    toggleDropdownMenu();
-  });
-
-  
 });
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 600) {
+    dropdownMenu.style.display = 'none';
+  }
+});
+

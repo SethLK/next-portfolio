@@ -1,0 +1,21 @@
+#email{
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.btn{
+    width: 300px;
+    border: 2px solid;
+    padding: 10px 20px;
+    font-size: 25px;
+    border-radius: 20px;
+    background-color: #111827;
+    color: #F3F4F6;
+
+}
+
+.img-container > .links{
+    padding: 20px;
+}

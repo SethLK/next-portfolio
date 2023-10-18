@@ -46,7 +46,7 @@ export default function Blog() {
       <div className="blog-list">
         <h1 className="text-5xl">Blog</h1>
         {loading ? (
-          <p>Loading...</p>
+          <p className='mt-5'>Loading...</p>
         ) : (
           <ul>
             {blogPosts.map((content) => (
