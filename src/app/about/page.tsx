@@ -10,7 +10,6 @@ const About = () => {
     "imgs/icons8-c.svg",
     "imgs/icons8-c (1).svg",
     "imgs/php-1 (1).svg",
-    "imgs/rust.svg",
     "imgs/bootstrap.svg",
     "imgs/icons8-tailwind-css.svg",
     "imgs/icons8-nodejs.svg",
@@ -22,7 +21,6 @@ const About = () => {
     "imgs/icons8-mysql.svg",
     "imgs/next-js-seeklogo.com.svg",
     "imgs/laravel-2 (1).svg",
-    "imgs/rocket.svg",
     "imgs/icons8-chess.svg",
   ];
 
